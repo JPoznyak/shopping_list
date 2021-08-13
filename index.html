@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping list</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="shopping-list">
+        <div class="header">
+            <h1>{{ header.toLocaleUpperCase() }}</h1>
+            <button v-if="state === 'default'" class="btn btn-primary" @click="chageState('edit')">Add Item</button>
+            <button v-else class="btn btn-primary btn-cancel" @click="chageState('default')">Cancel</button>
+        </div>
+        <div v-if="state === 'edit'" class="add-item-form">
+            <input v-model="newItem" type="text" placeholder="Add an item" @keyup.enter="saveItem">
+            <button class="btn" v-bind:disabled="newItem.length === 0" @click="saveItem">Save Item</button>
+        </div>
+        <ol class="list">
+            <li v-for="item in items" :class="{strikeout: item.purchased}">{{ item.label }}</li>
+        </ol>
+        <p v-if="items.length === 0">Nice job! You've bought all items!</p>
+    </div>
+
+<script src="https://unpkg.com/vue"></script> 
+<script>
+    let shoppingList = new Vue ({
+        el: '#shopping-list',
+        data: {
+            state: 'default',
+            header: 'shopping list app',
+            newItem: '',
+            items: [
+                {
+                    label: '10 party hats',
+                    purchased: false,
+                },
+                {
+                    label: '20 cups',
+                    purchased: true,
+                },
+                {
+                    label: '1 huge pie',
+                    purchased: false,
+                }  
+            ]
+        },
+
+        methods: {
+            saveItem() {
+                this.items.push({
+                    label: this.newItem,
+                    purchased: false,
+                },);
+                this.newItem = '';
+            },
+            chageState(newState){
+                this.state = newState;
+                this.newItem = '';
+            }
+        }
+    });
+</script>   
+</body>
+</html>

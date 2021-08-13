@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gainsboro;
+    color: dimgray;
+}
+
+#shopping-list {
+    width: 90%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 5px 10px 15px rgba(116, 131, 150, 0.5);
+    /* text-decoration: none; */
+
+}
+
+input {
+    width: 60%;
+    margin-top: 10px;
+    padding: 10px;
+    color: grey;
+    border: 1px solid rgb(207, 199, 199);
+    box-shadow: 0.5px 6px 8px rgba(180, 188, 199, 0.3);
+}
+
+.btn {
+    background-color: rgb(122, 194, 194);
+    color: #fff;
+    width: 100px;
+    font-weight: 700;
+    border-color: transparent;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 5px 7px 10px rgba(206, 200, 188, 0.5);
+    position: relative;
+    float: right; 
+}
+
+.btn:disabled {
+    background-color: rgb(185, 199, 199);
+}
+
+.btn-primary {
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    
+}
+
+.btn-cancel {
+    background-color: rgb(247, 117, 117)
+}
+
+.list {
+    /* list-style: none; */
+    list-style-position: inside;
+
+}
+
+  .list_item {
+    padding: 50px;
+    position: relative;
+  }
+
+  .strikeout {
+      text-decoration: line-through;
+  }
