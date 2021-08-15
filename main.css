@@ -57,14 +57,14 @@ input {
 .list {
     /* list-style: none; */
     list-style-position: inside;
-
+    padding-left: 0;
 }
 
-  .list_item {
-    padding: 50px;
-    position: relative;
-  }
+.strikeout {
+    text-decoration: line-through;
+}
 
-  .strikeout {
-      text-decoration: line-through;
-  }
+.add-item-form{
+    display: flex;
+    justify-content: space-between; 
+}
